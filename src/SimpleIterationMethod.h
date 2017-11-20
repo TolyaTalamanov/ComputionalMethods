@@ -7,6 +7,7 @@ class SimpleIterationMethod : public IComputionalMethod {
 public:
     std::vector<double> compute(const Matrix &matrix,
                                 const std::vector<double> &b) override;
+
 };
 
 

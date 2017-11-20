@@ -1,6 +1,6 @@
 #ifndef COMPUTATIONALMETHODS_COMPUTIONALMETHODS_H
 #define COMPUTATIONALMETHODS_COMPUTIONALMETHODS_H
-#define EXPORT __attribute__((visibility ("default")))
+//#define EXPORT __attribute__((visibility ("default")))
 
 #include <vector>
 #include <memory>
@@ -14,7 +14,7 @@ enum class Implementation{
 };
 
 using Matrix = std::vector<std::vector<double>>;
-class EXPORT IComputionalMethod{
+class  IComputionalMethod{
 public:
     virtual std::vector<double> compute(const Matrix& matrix,
                                         const std::vector<double>& b) = 0;

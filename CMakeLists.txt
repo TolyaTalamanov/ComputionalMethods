@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.4)
 project(ComputationalMethods)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -13,3 +13,4 @@ set(SOURCE src/GaussMethod.cpp src/GaussMethod.h
 
 set(SOURCE_FILES sample/main.cpp ${INCLUDE} ${SOURCE} )
 add_executable(ComputationalMethods ${SOURCE_FILES})
+add_library(ComputionalMethodsLib ${SOURCE_FILES})
