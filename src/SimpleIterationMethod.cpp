@@ -10,7 +10,6 @@ const double epsilon = 0.01;
 
 std::vector<double> SimpleIterationMethod::compute(const Matrix &matrix,
                                                    const std::vector<double> &b) {
-//  int numMax = 0;
     vector<int> max_pos(matrix.size());
     int sum = 0;
     for(int i = 0; i < matrix.size(); i++) {
@@ -49,7 +48,7 @@ std::vector<double> SimpleIterationMethod::compute(const Matrix &matrix,
                D[i][j] = (-1) * A[i][j] / A[i][i];
             }
         }
-        B[i] /= A[i][i]; //проверь какая матрица должна быть
+        B[i] /= A[i][i];
     }
     for(int i = 0; i < D.size(); i++) {
         for (int j = 0; j < D.size(); j++)
@@ -63,21 +62,13 @@ std::vector<double> SimpleIterationMethod::compute(const Matrix &matrix,
     double sumRow ;
     double  maxSum = 0;
     for(int i = 0; i < D.size(); i++) {
-//        sumRow = std::accumulate(D[i].begin(), D[i].end(), 0.0, [](double& sum, double& val){
-//            cout << "sum = " << sum << endl;
-//            cout << "val = " << val  << endl;
-//            sum += std::abs(val);
-//            return sum;
-//        });
         sumRow = 0;
         for (int j = 0; j < D.size(); j++) {
             sumRow += std::abs(D[i][j]);
         }
-       // cout << "sumrow = " << sumRow << endl;
         if (sumRow > maxSum)
             maxSum = sumRow;
     }
-   // cout << "maxSum = " << maxSum << endl;
     if (maxSum >= 1){
         cout << "Решение не сходится!!" << endl;
         exit(-1);
