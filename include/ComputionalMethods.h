@@ -13,7 +13,7 @@ enum class Implementation{
     UPPER_RELAXATION
 };
 
-using Matrix = std::vector<std::vector<int>>;
+using Matrix = std::vector<std::vector<double>>;
 class EXPORT IComputionalMethod{
 public:
     virtual std::vector<double> compute(const Matrix& matrix,

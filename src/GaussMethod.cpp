@@ -1,3 +1,6 @@
+#include <algorithm>
+#include <iterator>
+#include <iostream>
 #include "GaussMethod.h"
 #include <iostream>
 std::vector<double> GaussMethod::compute(const Matrix &matrix,
@@ -11,13 +14,7 @@ std::vector<double> GaussMethod::compute(const Matrix &matrix,
         swapRow = getMaxRow(A, i);
         std::iter_swap(A.begin() + swapRow, A.begin() + i);
         std::iter_swap(B.begin() + swapRow, B.begin() + i);
-        if (A[i][i] == 0){
-            if (B[i] == 0)
-                std::cout << "Система имеет бесконечно много решений!" << std::endl;
-            else
-                std::cout << "Система не имеет решений!" << std::endl;
-            exit(-1);
-        }
+
         for(int k  = i; k < size - 1; k++ ){
             coeff = A[k + 1][i] / A[i][i];
             B[k + 1] -= B[i] * coeff;
@@ -25,6 +22,7 @@ std::vector<double> GaussMethod::compute(const Matrix &matrix,
                 A[k + 1][j] -= A[i][j] * coeff;
             }
         }
+
     }
 
     std::vector<double> x(size);
