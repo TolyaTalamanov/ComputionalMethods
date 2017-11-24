@@ -19,8 +19,8 @@ std::unique_ptr<IComputionalMethod> IComputionalMethod::create(Implementation im
         case Implementation::SIMPLE_ITERATION :
             return std::unique_ptr<IComputionalMethod>(new SimpleIterationMethod());
 
-        case Implementation::UPPER_RELAXATION :
-            return std::unique_ptr<IComputionalMethod>(new UpperRelaxationMethod());
+    //    case Implementation::UPPER_RELAXATION :
+//            return std::unique_ptr<IComputionalMethod>(new UpperRelaxationMethod());
 
         default :
             return nullptr;
